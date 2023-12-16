@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login Page</title>
+</head>
+<body>
+    <h1>Employee Login</h1>
+    not case sensetive!<br><br>
+    <form action="/login" method="post">
+        <strong>Employee Username:</strong> <input type="text" id="username" name="username"><br><br>
+        <strong>Employee Password:</strong> <input type="password" id="password" name="password"><br><br>
+        <input type="reset" value="Reset Fields">
+        <input type="submit" value="Login" id="submit">
+    </form>
+    <script>
+        document.querySelector("#submit").onclick = () => {
+            let username = document.getElementById("username").value.toLowerCase();
+            let password = document.getElementById("password").value.toLowerCase();
+
+            if (username !== "employee" || password !== "employee") {
+                alert("Invalid username or password. Please try again.");
+                document.getElementById("username").value = ""; // Clear username field
+                document.getElementById("password").value = "";
+                event.preventDefault(); 
+            }
+        };
+    </script>
+</body>
+</html>

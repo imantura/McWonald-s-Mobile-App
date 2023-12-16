@@ -1,0 +1,49 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Order Receipt</title>
+</head>
+
+<body>
+	<h1>Order Receipt</h1>
+
+	<div id = "reciept">
+        <strong>Order Number: <%- id %></strong><br><br>
+		<strong>Name: </strong><%- name %><br>
+        <strong>Email Address: </strong><%- email %><br>
+        <strong>Delivery Method: </strong><%- delivery %><br>
+        <%- geolocation %>
+        <strong>Phone Number: </strong><%- phone %><br><br>
+        <strong>Order: </strong><br>
+        <%- items %><br>
+        <strong>Credit Card: </strong><%- card %><br>
+        <strong>Security Code: </strong><%- code %><br>
+        <strong>Background Information: </strong><br><%- info %><br><br>
+        <hr>
+        <strong>Your order has been placed at <%- time %></strong>
+        <%- ordertime %>
+        <hr>
+	</div>
+    <br>
+    <a href="/home">HOME</a>
+    <style>
+        #reciept{
+            text-align: center;
+            border-style: solid solid dotted solid;
+            padding: 10px;
+        }
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+        a{
+			color: red;
+
+		}
+    </style>
+</body>
+
+</html>

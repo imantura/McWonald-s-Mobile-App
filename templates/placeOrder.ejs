@@ -1,0 +1,132 @@
+<!-- DO NOT MODIFY THIS FILE -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>McWonalds</title>
+</head>
+
+<body>
+	<h1>&#10024 Order from Mc<div id="yellow_w">W</div>onald's Home Page &#10024</h1>
+    <form action="/placeOrder" method="post">
+    <fieldset>
+        <strong>Name:</strong> <input type="text" name="name" required><br><br>
+        <strong>Email Address:</strong> <input type="email" name="email" required><br><br>
+
+        <strong>Delivery Method:</strong><br>
+        <label><input type="radio" name="delivery" id= "pickup" value="pickup" required>Will pick up order</label><br>
+        <label><input type="radio" name="delivery" id = "deliver" value="deliver" required>Deliver order</label><br><br>
+
+        <div id="how_get" style="display:none">
+            <strong>How should we deliver:</strong><br>
+            <label><input type="radio" name="geo" id = "geo_tag" value="geotag">Using the geolocator API</label><br>
+            <label><input type="radio" name="geo" id = "location" value="location">Using input address</label><br><br>
+        </div>
+        
+        <div id="adress_option" style="display:none">
+            <strong>Address:</strong> <input type="text" name="address"><br><br>
+        </div>
+
+        <div id = "loco">
+            &#10024 use numbers with no characters or spaces please  &#10024 
+        </div>
+        <strong>Phone Number:</strong> +1 <input type="number" min="1000000000" max="9999999999" name="phone" required>
+    
+        <br><br>
+
+        <strong>Order:</strong><br>
+        <div id = "loco">
+            no more than 99 orders per menu item. for more call catering.
+        </div>
+
+        <br>
+        Chicken Nuggets <input type="number" id="ChickenQuantity" name="NuggetsQuantity" min="0" max="99" value = "0"/><br>
+    
+        Wings <input type="number" id="WingQuantity" name="WingQuantity" min="0" max="99" value = "0"/><br>
+
+        Salad <input type="number" id="SaladQuantity" name="SaladQuantity" min="0" max="99" value = "0"/><br>
+    
+        Burger <input type="number" id="BurgerQuantity" name="BurgerQuantity" min="0" max="99" value = "0"/><br>
+
+        Beverage <input type="number" id="BeverageQuantity" name="BeverageQuantity" min="0" max="99" value = "0"/><br>
+    
+        Fries <input type="number" id="FriesQuantity" name="FriesQuantity" min="0" max="99" value = "0"/><br>
+
+        Milkshake <input type="number" id="MilkshakeQuantity" name="MilkshakeQuantity" min="0" max="99" value = "0"/><br><br>
+
+        <strong>Credit Card Number:</strong> <input type="text" maxlength="16" minlength="15" name="credit_card" required> &nbsp; &nbsp; &nbsp;         
+        <strong>Security Code Number:</strong> <input type="number" max="9999" min="99" name="security_code" required>
+        <br><br>
+
+        <strong>Specifications for your order:</strong><br><textarea rows="5" cols="79" name="info"></textarea>
+    </fieldset>
+    <br>
+    <input type="reset">
+    <input type="submit" id = "Submit" value="Submit Order">
+
+	<hr>
+
+    <a href="/home">HOME</a><br>
+    <a href="/menu">Menu</a>
+    </form>
+    <script>
+        document.getElementById("location").addEventListener("click", handle);
+        document.getElementById("geo_tag").addEventListener("click", anti_handle);
+
+        document.getElementById("deliver").addEventListener("click", handle2);
+        document.getElementById("pickup").addEventListener("click", anti_handle2);
+
+        document.getElementById("pickup").addEventListener("click", anti_handle);
+ 
+        function handle(){
+            let T = document.querySelector("#adress_option");
+            T.style.display = "block"; 
+        }
+        function anti_handle(){
+            let T = document.querySelector("#adress_option"); 
+            T.style.display = "none";
+        }
+
+        function handle2(){
+            let T = document.querySelector("#how_get")
+            T.style.display = "block";
+        }
+
+        function anti_handle2(){
+            let T = document.querySelector("#how_get")
+            T.style.display = "none";
+        }
+    </script>
+    <style>
+         #loco{
+            font-size: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+		#yellow_w {
+            display: inline-block;
+            color: rgb(255, 255, 0); 
+        }
+		a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+		a{
+			color: red;
+
+		}
+
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+		a{
+			color: red;
+
+		}
+    </style>
+</body>
+
+</html>

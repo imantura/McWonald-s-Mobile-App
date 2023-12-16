@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McWonald's Home Page</title>
+</head>
+
+<body>
+    <div id="everything">
+        <h1>&#10024 Welcome to Mc<div id="yellow_w">W</div>onald's Home Page &#10024</h1>
+        <div id = "loco">
+            Location: College Park The Brendan Iribe Center
+        </div>
+        <br>
+        <div id="photoContainer">
+            
+            <img src="/images/initial_image.jpg" id="displayedPhoto" alt="Initial Image" width="400" height="350" class="photoContainer">
+        </div>
+        <br>
+        <div id="centered_buttons_container">
+            <div id="slideshow_buttons">
+                <div id="click_though">
+                    <legend>Click Through Promotions</legend>
+                    <input type="button" class="button" id="PreviousPhoto" value="Previous Photo">
+                    <input type="button" class="button" id="NextPhoto" value="Next Photo">
+                </div>
+                <div id="slideshow">
+                    <legend>Slideshow of Promotions</legend>
+                    <input type="button" class="button" id="StartSlideShow" value="SlideShow">
+                    <input type="button" class="button" id="StopSlideShow" value="StopSlideShow">
+                </div>
+            </div>
+        </div id="highlight">
+        <h2>Order Online</h2>
+
+        <ul>
+            <li> <a href="/menu">Menu</a> </li>
+            <li><a href="/placeOrder">Place Order</a>
+                <br>
+            </li>
+        </ul>
+
+        <h2>For Employees</h2>
+
+        <ul>
+            <li><a href="/login">Employee Login</a><br></li>
+        </ul>
+    </div>
+    <script>
+        let photo_num = 0;
+        let animationStarted = false, animationId = false;
+
+        document.querySelector("#NextPhoto").addEventListener("click", () => {
+            photo_num = photo_num + 1;
+            if (photo_num === 7) {
+                photo_num = 1;
+            }
+            let imageElement = document.getElementById("displayedPhoto");
+            let image_promo = "images/promo" + photo_num + ".jpg";
+            imageElement.setAttribute("src", image_promo);
+        });
+        document.querySelector("#PreviousPhoto").addEventListener("click", () => {
+            photo_num = photo_num - 1;
+            if (photo_num === -1 || photo_num === 0) {
+                photo_num = 6;
+            }
+            let imageElement = document.getElementById("displayedPhoto");
+            let image_promo = "images/promo" + photo_num + ".jpg";
+            imageElement.setAttribute("src", image_promo);
+        });
+
+        document.querySelector("#StartSlideShow").addEventListener("click", () => {
+            if (!animationStarted) {
+                animationId = setInterval("random()", 800);
+                animationStarted = true;
+            }
+        });
+        document.querySelector("#StopSlideShow").addEventListener("click", () => {
+            if (animationStarted) {
+                clearInterval(animationId);
+                animationStarted = false;
+            }
+        });
+        function random() {
+            let imageElement = document.getElementById("displayedPhoto");
+
+            photo_num = Math.floor(Math.random() * 6) + 1;
+            let image_promo = "images/promo" + photo_num + ".jpg";
+            imageElement.setAttribute("src", image_promo);
+        }
+    </script>
+    <style>
+        #everything {
+            border-style: solid;
+            border-width: 1rem;
+            border-color: brown;
+            padding: 2rem;
+            background-color: antiquewhite;
+        }
+
+        #loco{
+            font-size: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        h2{
+            color: rgb(88, 24, 24);
+        }
+        img {
+            border: double black;
+            border-width: .5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #yellow_w {
+            display: inline-block;
+            color: yellow; 
+            background-color: red;
+        }
+
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+
+        #slideshow_buttons {
+            border: 1px solid black;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        #centered_buttons_container {
+            text-align: center;
+        }
+        a{
+			color: rgb(155, 46, 46);
+
+		}
+    </style>
+</body>
+
+</html>

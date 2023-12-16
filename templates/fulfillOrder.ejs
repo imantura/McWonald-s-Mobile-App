@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's fulfill customers orders</title>
+</head>
+<body>
+    <h1>Fulfill Customers Order</h1>
+    <form action="/fulfillOrder" method="post">
+        <%- orderList %><br><br>
+        <button type="reset" value="Reset">Reset</button>
+        <button type="submit" id = "Submit" value="Submit">Fulfill Orders</button>
+    </form>
+    <br><br>
+    <div id = "info">
+
+    </div>
+    <br><br>
+    <hr>
+    
+    <a href="/home">HOME</a><br>
+
+    <script>
+        function myFunction() {
+            let x = document.getElementById("order").value;
+            document.getElementById("info").innerHTML = "You selected: " + x;
+        }   
+    </script>
+</body>
+</html>
