@@ -18,4 +18,4 @@ We habe actually utilized two API's for this project.
     Two to caluclate the shortest distance between McWonald's and location: https://distancematrix.ai/distance-matrix-api#request_parameters
 
 YouTube Demo Video: 
-coming soon 
+https://www.youtube.com/watch?v=Q-IyZeLH0kw
