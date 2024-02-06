@@ -1,6 +1,7 @@
 Team members: 
-1. Iman Tura (imantura)
-2. Kevin Nguyen (knguye29) 
+1. Iman Tura (Team Leader)
+2. Kevin Nguyen 
+3. Justin Reese
 
 App Description: 
 This is an interactive menu which allows customer to place an order and see corresponding, relavent information to their order. McWonald's
