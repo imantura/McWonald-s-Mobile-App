@@ -4,7 +4,7 @@ Team members:
 3. Justin Reese
 
 App Description: 
--> This is an interactive menu I developed using Node.JS, which allows customer to place an order and see corresponding, relavent information to their order. McWonald's
+-> This is an interactive menu I developed using Node.JS, HTML, CSS, Express, Mongo DB, etc, which allows customer to place an order and see corresponding, relavent information to their order. McWonald's
 has a hompage where you may access promotional detail and links to other pages. Two important links are the menu and a link to place an
 order which will grant you a recciept. Your recciept utilizes your input to tell you when your food is ready. 
 This app also relies on employee data, in which the employee is able to fullfill orders. 
