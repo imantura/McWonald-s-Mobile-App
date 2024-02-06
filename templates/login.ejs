@@ -13,6 +13,9 @@
         <strong>Employee Password:</strong> <input type="password" id="password" name="password"><br><br>
         <input type="reset" value="Reset Fields">
         <input type="submit" value="Login" id="submit">
+
+        <br><br><br>
+        <a href="/home">HOME</a><br>
     </form>
     <script>
         document.querySelector("#submit").onclick = () => {
@@ -27,5 +30,16 @@
             }
         };
     </script>
+
+    <style>
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+		a{
+			color: red;
+
+		}
+    </style>
 </body>
 </html>
